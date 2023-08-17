@@ -201,7 +201,7 @@ const closeConn = (doc, conn) => {
     doc.conns.delete(conn)
     awarenessProtocol.removeAwarenessStates(doc.awareness, Array.from(controlledIds), null)
     if (doc.conns.size === 0 && persistence !== null) {
-      console.log('Persisting document write white last state..')
+      console.log('Persisting document write white last state.. ')
       persistence.writeState(doc.name, doc).then(() => {
         doc.destroy()
       })
